@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root {
+            --color-bg: #f9f7f5;
+            --color-main: #b8672e;
+            --color-main-dark: #8f5326;
+            --color-brown-light: #ebe6e0;
+            --color-text: #494949;
+            --color-text-sub: #988272;
+            --color-price: #b8672e;
+            --color-label: #9f8b7c;
+            --color-danger: #d92626;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Pretendard", "Noto Sans KR", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            color: var(--color-text);
+            background-color: var(--color-bg);
+        }
+
+        main {
+            display: flex;
+            justify-content: center;
+            padding: 32px 16px 64px;
+        }
+
+        .menu-detail {
+            width: min(420px, 100%);
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .menu-detail__title {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 8px 0;
+        }
+
+        .menu-detail__back {
+            width: 32px;
+            height: 32px;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        .menu-detail__back svg {
+            width: 18px;
+            height: 18px;
+            stroke: var(--color-text);
+            stroke-width: 2;
+            fill: none;
+        }
+
+        .menu-detail__images {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+        }
+
+        .menu-detail__image-card {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .menu-detail__image-card img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        .menu-detail__headline {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .menu-detail__name {
+            font-size: 20px;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .menu-detail__subname {
+            font-size: 14px;
+            color: var(--color-text-sub);
+            margin: 0;
+        }
+
+        .menu-detail__tags {
+            display: flex;
+            gap: 8px;
+        }
+
+        .menu-detail__tag {
+            padding: 4px 12px;
+            border-radius: 16px;
+            font-size: 14px;
+            font-weight: 600;
+            background-color: var(--color-brown-light);
+            color: var(--color-text);
+        }
+
+        .menu-detail__tag--filled {
+            background-color: var(--color-main);
+            color: #fff;
+        }
+
+        .menu-detail__section {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .menu-detail__label {
+            font-size: 16px;
+            color: var(--color-label);
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .menu-detail__price {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--color-price);
+            margin: 0;
+        }
+
+        .menu-detail__description {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .menu-detail__dates {
+            font-size: 12px;
+            color: #7c7c7c;
+            line-height: 1.6;
+        }
+
+        .menu-detail__actions {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .menu-detail__btn {
+            padding: 12px 0;
+            border-radius: 8px;
+            border: none;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            color: #fff;
+        }
+
+        .menu-detail__btn--edit {
+            background: linear-gradient(180deg, var(--color-main) 0%, var(--color-main-dark) 100%);
+        }
+
+        .menu-detail__btn--delete {
+            background-color: var(--color-danger);
+        }
+    </style>
+</head>
+<body>
+    <!-- header -->
+    <header>
+        <div>
+            <h1>NCafe</h1>
+            <div>공유</div>
+        </div>
+    </header>
+    <!-- main -->
+    <main>
+        <section class="menu-detail">
+            <div class="menu-detail__title">
+                <button class="menu-detail__back" type="button" aria-label="메뉴 목록으로 돌아가기">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                </button>
+                <h1>등록된 메뉴</h1>
+                <span aria-hidden="true"></span>
+            </div>
+            <div class="menu-detail__images">
+                <div class="menu-detail__image-card">
+                    <img src="https://www.figma.com/api/mcp/asset/f75ed383-29c9-460b-97c1-191e70df5759" alt="따뜻한 아메리카노">
+                </div>
+                <div class="menu-detail__image-card">
+                    <img src="https://www.figma.com/api/mcp/asset/73e08898-491b-41b6-9dde-b7a9e80cb368" alt="아이스 아메리카노">
+                </div>
+            </div>
+            <div class="menu-detail__headline">
+                <p class="menu-detail__name">아메리카노</p>
+                <p class="menu-detail__subname">Americano</p>
+            </div>
+            <div class="menu-detail__tags">
+                <span class="menu-detail__tag">커피</span>
+                <span class="menu-detail__tag menu-detail__tag--filled">판매중</span>
+            </div>
+            <div class="menu-detail__section">
+                <p class="menu-detail__label">가격</p>
+                <p class="menu-detail__price">4,500원</p>
+            </div>
+            <div class="menu-detail__section">
+                <p class="menu-detail__label">설명</p>
+                <p class="menu-detail__description">깊고 진한 에스프레소에 뜨거운 물을 더한 클래식 커피</p>
+            </div>
+            <div class="menu-detail__dates">
+                <p>등록일: 2025. 11. 18.</p>
+                <p>수정일: 2025. 11. 18.</p>
+            </div>
+            <div class="menu-detail__actions">
+                <button class="menu-detail__btn menu-detail__btn--edit" type="button">수정</button>
+                <button class="menu-detail__btn menu-detail__btn--delete" type="button">삭제</button>
+            </div>
+        </section>
+    </main>
+    <aside>
+        <h1>바로가기 메뉴</h1>
+        <ul>
+            <li>대시보드</li>
+            <li>메뉴목록</li>
+            <li>메뉴추가</li>
+        </ul>
+    </aside>
+    <!-- footer -->
+    <footer>
+        <section>
+            <h1>사이트 정보</h1>
+            <section>
+                <h1>회사 정보</h1>
+                <dl>
+                    <dt>상호</dt>
+                    <dd>뉴카페</dd>
+                    <dt>사업자등록번호</dt>
+                    <dd>111-222222-11</dd>
+                    <dt>대표</dt>
+                    <dd>뉴렉처</dd>
+                </dl>
+                <h1>연락처</h1>
+                <dl>
+                    <dt>주소</dt>
+                    <dd>서울시 마포구 백범로...</dd>
+                    <dt>전화</dt>
+                    <dd>02-111-333</dd>
+                    <dt>이메일</dt>
+                    <dd>help@ncafe.com</dd>
+                </dl>
+            </section>
+        </section>
+    </footer>
+</body>
+</html>
