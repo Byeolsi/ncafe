@@ -1,14 +1,22 @@
-.n-icon {
+.n-icon{    
     --icon-type: "";
     --icon-color: var(--color-base-9);
-    --icon-size: var(--icon-size-1);
+    --icon-size: var(--icon-size-2);
+    --icon-weight: 400;
+    --icon-fill: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+    .n-icon{
+        --icon-color: var(--color-base-1);        
+    }
 }
 
 .n-icon::before{
     /* boxing */
-    width: 24px;
-    height: 24px;
-
+    /* width: 24px;
+    height: 24px; */
+    
     /* layout */
     display: inline-flex;
     justify-content: center;
@@ -16,45 +24,117 @@
 
     /* content */
     font-family: "Material Symbols Outlined";
-    font-size: var(--icon-size-2);
+    font-weight: var(--icon-weight);
+    font-size: var(--icon-size);
+    color: var(--icon-color);
+    content: var(--icon-type);
+    font-variation-settings: 'FILL' var(--icon-fill);
 }
 
 .icon\:favorite::before{
-    content: "\e87d"; 
+    --icon-type: "\e87d"; 
 }
 
 .icon\:settings::before{
-    content: "\e8b8"; 
+    --icon-type: "\e8b8";
 }
 
-.icon-color\:main-1::before {
-    color: --icon-color;
+.icon-color\:main-1::before{
+    --icon-color: var(--color-main-1);
 }
 
-.icon-color\:main-2::before {
+.icon-color\:main-2::before{
     --icon-color: var(--color-main-2);
 }
 
-.icon-color\:main-3::before {
+.icon-color\:main-3::before{
     --icon-color: var(--color-main-3);
 }
 
-.icon-size\:1::before {
+.icon-color\:accent-1::before{
+    --icon-color: var(--color-accent-1);
+}
+
+.icon-size\:1::before{
     --icon-size: var(--icon-size-1);
 }
 
-.icon-size\:2::before {
+.icon-size\:2::before{
     --icon-size: var(--icon-size-2);
 }
 
-.icon-size\:3::before {
+.icon-size\:3::before{
     --icon-size: var(--icon-size-3);
 }
-/* 
- 1. 더 큰 아이콘이 필요할 때는?
- 2. 색이 다른 아이콘을 사용할 때는?
- 
- 아이콘 : 5 가지
- 색상은 : 3 가지
- 크기는 : 3 가지
- 총 : 5 * 3 * 3 = 45 가지 */
+
+.icon-weight\:1::before{
+    --icon-weight: 100;
+}
+
+.icon-weight\:2::before,
+.icon-weight\:light::before{
+    --icon-weight: 200;
+}
+
+.icon-weight\:3::before{
+    --icon-weight: 300;
+}
+
+.icon-weight\:4::before,
+.icon-weight\:normal::before{
+    --icon-weight: 400;
+}
+
+.icon-weight\:5::before{
+    --icon-weight: 500;
+}
+
+.icon-weight\:6::before{
+    --icon-weight: 600;
+}
+
+.icon-weight\:7::before,
+.icon-weight\:bold::before{
+    --icon-weight: 700;
+}
+
+.icon-fill\:0::before{
+    --icon-fill: 0;
+}
+
+.icon-fill\:1::before{
+    --icon-fill: 1;
+}
+
+
+/*
+1. CSS 가 뭐예요?
+2. CSS로 스타일을 준다면 둘로 나눠서 처리한다.
+   -박스 스타일
+   -콘텐츠 스타일
+3. 박스 스타일과 관련된
+   - 박스의 크기
+   - 박스의 레이아웃
+   - 박스의 여백(패딩, 마진)
+   - 박스의 배경
+   - 박스의 테두리
+   - 박스의 그림자
+   - 박스의 투명도
+4. 콘텐츠 스타일의 종류
+    - 콘텐츠 박스(목록,표,폼,제목, 문장)
+    - 콘텐츠(텍스, 이미지...)
+5. 콘텐츠 스타일 리렛
+    - 폰트의 크기, 색상......
+    - 제목을 ... 스타일
+
+// 잠깐... 페이지 하나 : 3일 동안 진행
+// 페이지 두 번째 : 3일
+첫 페이지 3일->5일 : 집중화
+두 페이지 : 2시간
+세 페이지 : 1시간
+
+말단 스타일 : 헤더(*), 아이콘(*), 버튼...
+스타일 속성 + 아키텍처(*********) 
+
+
+*/
