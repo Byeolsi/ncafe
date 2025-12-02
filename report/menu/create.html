@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/report/asset/css/reset.css">
+    <link rel="stylesheet" href="/report/asset/css/common.css">
+    <link rel="stylesheet" href="/report/asset/css/create.css">
+</head>
+
+<body>
+    <div id="root">
+        <!-- === header ===================== -->
+        <header class="header">
+            <h1><a href="/report/index.html" class="header-root"><span class="icon"></span>NCafe</a></h1>
+            <!-- header 제목 -->
+            <div>
+                <button class="icon icon-share-btn"></button>
+            </div>
+        </header>
+        <!-- === main ===================== -->
+        <main>
+            <section class="main_section">
+                <h1>메뉴 등록</h1>
+                <form class="create-form" id="menu-form" method="post" action="create.php">
+                    <div>
+                        <label>
+                            메뉴 이미지 <input class="icon" type="file" accept="image/*" multiple>
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            한글명 <span>*</span>
+                            <input type="text" name="kor-name" required placeholder="한글명을 입력하세요." minlength="2"
+                                maxlength="8" autocomplete="off" title="예)아메리카노" pattern="^[가-힣]+$" autofocus>
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            영문명 <input type="text" name="eng-name" placeholder="영문명을 입력하세요." pattern="^[a-zA-Z]+$"
+                                title="예)Americano">
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            카테고리 <span>*</span>
+                            <select name="category-id" required>
+                                <option value="">선택해주세요.</option>
+                                <option value="1">커피</option>
+                                <option value="2">논커피</option>
+                                <option value="3">티/차</option>
+                                <option value="4">에이드</option>
+                                <option value="5">주스/스무디</option>
+                                <option value="6">아이스크림</option>
+                                <option value="7">베이커리</option>
+                            </select>
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            가격 <span>*</span>
+                            <input type="number" name="price" required placeholder="가격을 입력하세요." min="100" max="10000">
+                        </label>
+                    </div>
+
+                    <div>
+                        <label>
+                            설명
+                            <textarea cols="60" rows="10" name="description" placeholder="메뉴 설명을 입력하세요."></textarea>
+                        </label>
+                    </div>
+
+                    <div class="checkbox-form">
+                        <div class="form-chkBox-sellable">
+                            <label>
+                                <input type="checkbox" class="chkBox-sellable" name="is-sellable">
+                                <span class="icon"></span>
+                                판매가능
+                            </label>
+                        </div>
+
+                        <div class="form-is-hot-ice-chkbox">
+                            <div>
+                                <label>
+                                    <input type="checkbox" class="chkBox-hot" name="is-hot">
+                                    <span class="icon"></span>
+                                    Hot
+                                </label>
+                            </div>
+
+                            <div>
+                                <label>
+                                    <input type="checkbox" class="chkBox-ice" name="is-ice">
+                                    <span class="icon"></span>
+                                    Iced
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="button-page">
+                        <button>저장</button>
+                        <button type="button" onclick="location.href='list.html'">취소</button>
+                    </div>
+                </form>
+            </section>
+        </main>
+        <!-- footer s -->
+        <footer class="footer">
+            <section>
+                <h1>사이트 정보</h1>
+                <div>
+                    <section class="site-info-section">
+                        <section>
+                            <h1>하이미디어 아카데미 신촌점</h1>
+                            <dl>
+                                <dt>기관명</dt>
+                                <dd>하이미디어 아카데미 신촌점</dd>
+                                <dt>서비스명</dt>
+                                <dd>NCafe</dd>
+                                <dt>등록번호</dt>
+                                <dd>111-222-3333</dd>
+                                <dt>팀명</dt>
+                                <dd>2조</dd>
+                            </dl>
+                        </section>
+                        <section>
+                            <h1>연락처</h1>
+                            <dl>
+                                <dt>주소</dt>
+                                <dd>서울특별시 서대문구 신촌로</dd>
+                                <dt>전화</dt>
+                                <dd>111-2222-3333</dd>
+                                <dt>이메일</dt>
+                                <dd>ncafe@ncafe.com</dd>
+                            </dl>
+                        </section>
+                        <section>
+                            <h1>핵심 바로가기</h1>
+                            <ul>
+                                <li><a href="/report/index.html">대쉬보드</a></li>
+                                <li><a href="/report/menu/list.html">메뉴 리스트</a></li>
+                            </ul>
+                        </section>
+                    </section>
+                    <div class="copyright">
+                        <p>Copyright &copy; 2025 NCafe App. All rights reserved.</p>
+                        <p>Designed and Developed by 하이미디어 아카데미 신촌점</p>
+                    </div>
+                </div>
+            </section>
+        </footer>
+        <!--  footer e -->
+        <!-- nav s -->
+        <nav class="nav">
+            <h1>바로가기 메뉴</h1> <!-- nav 제목 -->
+            <ul>
+                <li><a class="icon icon-dashboard" href="/report/index.html"></a></li>
+                <li><a class="icon icon-menulist" href="/report/menu/list.html"></a></li>
+                <li><a class="icon icon-create active" href="/report/menu/create.html"></a></li>
+            </ul>
+        </nav>
+        <!-- nav e -->
+    </div>
+</body>
+
+</html>

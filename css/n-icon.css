@@ -1,0 +1,60 @@
+.n-icon {
+    --icon-type: "";
+    --icon-color: var(--color-base-9);
+    --icon-size: var(--icon-size-1);
+}
+
+.n-icon::before{
+    /* boxing */
+    width: 24px;
+    height: 24px;
+
+    /* layout */
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    /* content */
+    font-family: "Material Symbols Outlined";
+    font-size: var(--icon-size-2);
+}
+
+.icon\:favorite::before{
+    content: "\e87d"; 
+}
+
+.icon\:settings::before{
+    content: "\e8b8"; 
+}
+
+.icon-color\:main-1::before {
+    color: --icon-color;
+}
+
+.icon-color\:main-2::before {
+    --icon-color: var(--color-main-2);
+}
+
+.icon-color\:main-3::before {
+    --icon-color: var(--color-main-3);
+}
+
+.icon-size\:1::before {
+    --icon-size: var(--icon-size-1);
+}
+
+.icon-size\:2::before {
+    --icon-size: var(--icon-size-2);
+}
+
+.icon-size\:3::before {
+    --icon-size: var(--icon-size-3);
+}
+/* 
+ 1. 더 큰 아이콘이 필요할 때는?
+ 2. 색이 다른 아이콘을 사용할 때는?
+ 
+ 아이콘 : 5 가지
+ 색상은 : 3 가지
+ 크기는 : 3 가지
+ 총 : 5 * 3 * 3 = 45 가지 */
